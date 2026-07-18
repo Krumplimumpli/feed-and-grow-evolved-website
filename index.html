@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed & Grow Evolved – Mod Page</title>
+    <!-- Font Awesome Icons (kostenlos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1a2f44 100%);
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .mod-card {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(22, 40, 62, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 25px 50px -8px rgba(0,0,0,0.8), 0 0 0 1px rgba(120, 200, 255, 0.15);
+            padding: 2.2rem 2.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(80, 180, 255, 0.2);
+        }
+
+        /* Header */
+        .mod-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid rgba(60, 160, 255, 0.3);
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .mod-title h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #f0f9ff;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 5px rgba(0, 30, 60, 0.6);
+        }
+
+        .mod-title h1 i {
+            color: #6ab0ff;
+            margin-right: 12px;
+        }
+
+        .mod-title .sub {
+            font-size: 0.95rem;
+            color: #9bc7ff;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .mod-title .sub i {
+            color: #ffd966;
+        }
+
+        .version-badge {
+            background: #1e3b5a;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #b6defa;
+            box-shadow: inset 0 0 8px rgba(0, 160, 255, 0.3), 0 4px 8px rgba(0,0,0,0.3);
+            border: 1px solid #3f89c7;
+            letter-spacing: 1px;
+        }
+
+        .version-badge span {
+            color: #ffd966;
+            font-weight: 700;
+            background: #0a1e30;
+            padding: 0 10px;
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+
+        /* Features Grid */
+        .features-section {
+            background: rgba(12, 28, 45, 0.6);
+            border-radius: 32px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(70, 160, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .features-section h2 {
+            color: #b0daff;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .features-section h2 i {
+            color: #ffb347;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+        }
+
+        .feature-item {
+            background: #1b3450;
+            padding: 0.5rem 1.4rem 0.5rem 1rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #dceeff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            border: 1px solid #2d5a7a;
+        }
+
+        .feature-item i {
+            color: #6fcbff;
+            font-size: 1.2rem;
+            width: 1.6rem;
+            text-align: center;
+        }
+
+        .feature-item .highlight {
+            color: #ffd966;
+            font-weight: 700;
+        }
+
+        /* Bilder (Ingame) */
+        .gallery-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #bee2ff;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+
+        .gallery-title i {
+            color: #ffaa55;
+            font-size: 1.8rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-card {
+            background: #15304a;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+            border: 1px solid #2d6a8f;
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .image-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(0, 40, 80, 0.8);
+            border-color: #5aadff;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            background: #0a1e2f;
+            border-bottom: 2px solid #1f4e70;
+        }
+
+        .image-card .img-label {
+            padding: 0.5rem 0.8rem;
+            background: #0f263b;
+            color: #bfdfff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image-card .img-label i {
+            color: #ffb347;
+        }
+
+        /* GitHub Link + Footer */
+        .mod-footer {
+            margin-top: 2.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem 0.5rem;
+            border-top: 1px solid #2d5577;
+            padding-top: 1.8rem;
+        }
+
+        .github-link {
+            background: #0e2238;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            color: #b8dfff;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #3a77a3;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .github-link i {
+            font-size: 1.6rem;
+            color: #f0f6ff;
+        }
+
+        .github-link:hover {
+            background: #1b3d60;
+            border-color: #6db1ff;
+            color: white;
+            box-shadow: 0 0 16px #2a6b9e;
+        }
+
+        .mod-footer .note {
+            color: #8ab3d9;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mod-footer .note i {
+            color: #ffb347;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .mod-card {
+                padding: 1.5rem;
+                border-radius: 32px;
+            }
+            .mod-title h1 {
+                font-size: 1.8rem;
+            }
+            .version-badge {
+                font-size: 1.2rem;
+                padding: 0.3rem 1rem;
+            }
+            .feature-grid {
+                gap: 0.6rem;
+            }
+            .image-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mod-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .version-badge {
+                align-self: flex-start;
+            }
+            .mod-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mod-card">
+        <!-- HEADER: Titel & Version -->
+        <header class="mod-header">
+            <div class="mod-title">
+                <h1>
+                    <i class="fas fa-fish"></i> Feed & Grow Evolved
+                </h1>
+                <div class="sub">
+                    <span><i class="fas fa-code-branch"></i> Mod by Krumplimumpli</span>
+                    <span><i class="fas fa-tag"></i> Feed and Grow Fish</span>
+                </div>
+            </div>
+            <div class="version-badge">
+                <i class="fas fa-rocket"></i> v <span>0.1</span>
+            </div>
+        </header>
+
+        <!-- FEATURES: alle Fische unlocked + versionsnummer bearbeitet -->
+        <section class="features-section">
+            <h2>
+                <i class="fas fa-star"></i> Features
+            </h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i> Alle Fische <span class="highlight">unlocked</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-pen-fancy"></i> Versionsnummer <span class="highlight">bearbeitet</span> (0.1)
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-water"></i> Enhanced Gameplay
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i> Stabil & optimiert
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIE: Ingame-Bilder (aus GitHub) -->
+        <div class="gallery-title">
+            <i class="fas fa-images"></i> Ingame-Screenshots
+            <span style="font-size:0.8rem; color:#779fc7; margin-left:auto;">
+                <i class="fas fa-ghost"></i> GitHub
+            </span>
+        </div>
+        <div class="image-grid">
+            <!-- Bild 1: ingame1.jpg (oder png) -->
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/Krumplimumpli/FeedAndGrowEvolvedMod/main/ingame1.jpg" 
+                     alt="Ingame 1" 
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22140%22 viewBox=%220 0 300 140%22%3E%3Crect width=%22300%22 height=%22140%22 fill=%22%231a3050%22/%3E%3Ctext x=%2230%22 y=%2270%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%238ab3d9%22%3E%F0%9F%90%9F ingame1.jpg%3C/text%3E%3C/svg%3E';">
+                <div class="img-label">
+                    <span><i class="fas fa-fish"></i> Unterwasser</span>
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+
+            <!-- Bild 2: ingame2.jpg -->
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/Krumplimumpli/FeedAndGrowEvolvedMod/main/ingame2.jpg" 
+                     alt="Ingame 2"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22140%22 viewBox=%220 0 300 140%22%3E%3Crect width=%22300%22 height=%22140%22 fill=%22%231a3050%22/%3E%3Ctext x=%2230%22 y=%2270%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%238ab3d9%22%3E%F0%9F%90%9F ingame2.jpg%3C/text%3E%3C/svg%3E';">
+                <div class="img-label">
+                    <span><i class="fas fa-fish"></i> Riff</span>
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+
+            <!-- Bild 3: ingame3.jpg (oder png) -->
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/Krumplimumpli/FeedAndGrowEvolvedMod/main/ingame3.jpg" 
+                     alt="Ingame 3"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22140%22 viewBox=%220 0 300 140%22%3E%3Crect width=%22300%22 height=%22140%22 fill=%22%231a3050%22/%3E%3Ctext x=%2230%22 y=%2270%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%238ab3d9%22%3E%F0%9F%90%9F ingame3.jpg%3C/text%3E%3C/svg%3E';">
+                <div class="img-label">
+                    <span><i class="fas fa-fish"></i> Tiefe</span>
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+
+            <!-- Bild 4: ingame4.jpg (optional, aber wir zeigen es) -->
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/Krumplimumpli/FeedAndGrowEvolvedMod/main/ingame4.jpg" 
+                     alt="Ingame 4"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22140%22 viewBox=%220 0 300 140%22%3E%3Crect width=%22300%22 height=%22140%22 fill=%22%231a3050%22/%3E%3Ctext x=%2230%22 y=%2270%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%238ab3d9%22%3E%F0%9F%90%9F ingame4.jpg%3C/text%3E%3C/svg%3E';">
+                <div class="img-label">
+                    <span><i class="fas fa-fish"></i> Jagd</span>
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER: GitHub Link & Versionshinweis -->
+        <div class="mod-footer">
+            <a href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> GitHub Repository
+            </a>
+            <div class="note">
+                <i class="fas fa-info-circle"></i> Version 0.1 · Alle Fische freigeschaltet
+            </div>
+        </div>
+
+        <!-- kleiner Hinweis: Bilder von GitHub raw -->
+        <div style="margin-top: 1rem; font-size: 0.7rem; color: #547a9e; text-align: right; border-top: 1px solid #1f3f5a; padding-top: 0.6rem;">
+            <i class="fas fa-database"></i> Bilder geladen von <strong style="color:#7aa9d6;">github.com/Krumplimumpli/FeedAndGrowEvolvedMod</strong>
+        </div>
+    </div>
+</body>
+</html>
