@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FeedAndGrowEvolved – Mod für Feed and Grow: Fish</title>
-<meta name="description" content="FeedAndGrowEvolved ist ein kostenloser Mod für Feed and Grow: Fish. Version 0.1 macht jede Kreatur im Spiel spielbar.">
+<title>FeedAndGrowEvolved – Mod for Feed and Grow: Fish</title>
+<meta name="description" content="FeedAndGrowEvolved is a free mod for Feed and Grow: Fish. Version 0.1 makes every creature in the game playable.">
 <meta name="theme-color" content="#050b12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'%3E%3Cellipse cx='58' cy='38' rx='32' ry='17' fill='%2338ffd6'/%3E%3Cpath d='M26,38 L0,20 L0,56 Z' fill='%2338ffd6'/%3E%3Cpath d='M50,22 L58,4 L66,22 Z' fill='%2338ffd6'/%3E%3Ccircle cx='78' cy='34' r='3' fill='%23050b12'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="Pics/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -86,7 +86,8 @@
   }
   .nav.is-scrolled{ background:rgba(5,11,18,0.78); backdrop-filter:blur(10px); border-color:var(--line); }
   .nav__inner{display:flex; align-items:center; justify-content:space-between; padding-block:1.1rem;}
-  .logo{font-family:var(--font-display); font-weight:700; font-size:1.05rem; text-decoration:none; letter-spacing:-.01em; display:flex; align-items:baseline; gap:.35rem;}
+  .logo{font-family:var(--font-display); font-weight:700; font-size:1.05rem; text-decoration:none; letter-spacing:-.01em; display:flex; align-items:center; gap:.6rem;}
+  .logo img{height:32px; width:auto; display:block; filter:drop-shadow(0 0 6px rgba(56,255,214,.35));}
   .logo span{color:var(--glow);}
   .nav__links{display:flex; align-items:center; gap:2rem; list-style:none; margin:0; padding:0;}
   .nav__links a{font-size:.92rem; text-decoration:none; color:var(--murk); transition:color .2s ease;}
@@ -107,7 +108,7 @@
   .btn--sm{padding:.55rem 1rem; font-size:.82rem;}
 
   /* ---------- HERO ---------- */
-  .hero{padding-block:clamp(2.5rem,6vw,5rem) clamp(3rem,7vw,6rem); position:relative;}
+  .hero{padding-block:clamp(2.5rem,6vw,5rem) clamp(2.5rem,5vw,4rem); position:relative;}
   .hero__grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
   .hero__title{font-size:clamp(2.4rem,5.4vw,4.4rem); font-weight:800; line-height:1.04; margin-block:1.1rem .9rem;}
   .hero__title em{font-style:normal; color:var(--glow);}
@@ -116,7 +117,9 @@
   .badge{
     font-family:var(--font-mono); font-size:.82rem; letter-spacing:.05em; color:var(--glow);
     border:1px solid var(--line); background:var(--glow-soft); padding:.4rem .8rem; border-radius:999px;
+    text-decoration:none; transition:border-color .2s ease, background .2s ease;
   }
+  .badge:hover{border-color:var(--glow); background:rgba(56,255,214,.24);}
   .hero__ctas{display:flex; flex-wrap:wrap; gap:1rem;}
   .hero__visual{position:relative;}
   .hero__visual svg{width:100%; height:auto; display:block;}
@@ -133,6 +136,28 @@
   section{padding-block:clamp(3rem,7vw,5.5rem); position:relative;}
   .section-head{max-width:56ch; margin-bottom:clamp(2rem,4vw,3rem);}
   .section-head h2{font-size:clamp(1.7rem,3.2vw,2.5rem); margin-top:.7rem;}
+
+  /* ---------- UPDATE SPOTLIGHT ---------- */
+  #update{padding-block:0 clamp(1rem,3vw,2rem);}
+  .update-panel{
+    border-radius:var(--radius); border:1px solid var(--line);
+    background:radial-gradient(700px 340px at 20% -10%, rgba(56,255,214,.12), transparent 65%), var(--deep);
+    padding:clamp(1.75rem,4vw,3rem);
+  }
+  .update__grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center;}
+  .update-media{position:relative; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--line); aspect-ratio:16/10; background:var(--void);}
+  .update-media img{width:100%; height:100%; object-fit:cover; display:block;}
+  .update-media__tag{
+    position:absolute; top:.9rem; left:.9rem; font-family:var(--font-mono); font-size:.78rem; letter-spacing:.05em;
+    color:var(--void); background:var(--glow); padding:.35rem .7rem; border-radius:999px; font-weight:600;
+  }
+  .update-copy h2{font-size:clamp(1.9rem,3.6vw,2.8rem); margin:.6rem 0 .75rem;}
+  .update-copy > p{color:var(--murk); margin-bottom:1.5rem;}
+  .whats-new h3{font-family:var(--font-mono); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--murk); margin-bottom:.85rem;}
+  .whats-new ul{list-style:none; margin:0 0 1rem; padding:0; display:flex; flex-direction:column; gap:.6rem;}
+  .whats-new li{display:flex; align-items:flex-start; gap:.65rem; font-size:.98rem;}
+  .whats-new li::before{content:'+'; color:var(--glow); font-family:var(--font-mono); font-weight:700; line-height:1.5;}
+  .whats-new__note{font-family:var(--font-mono); font-size:.82rem; color:var(--murk); border-top:1px dashed var(--line); padding-top:.9rem; margin-bottom:1.6rem;}
 
   /* ---------- FEATURES ---------- */
   .statement{
@@ -192,30 +217,6 @@
   .lightbox__arrows{position:fixed; top:50%; left:0; right:0; display:flex; justify-content:space-between; padding-inline:1.25rem; transform:translateY(-50%); pointer-events:none;}
   .lightbox__arrows button{pointer-events:auto;}
 
-  /* ---------- CHANGELOG ---------- */
-  .log{max-width:640px;}
-  .log-entry{
-    border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem 1.8rem;
-    background:linear-gradient(180deg, var(--deep), var(--deep-2)); margin-bottom:1.25rem;
-  }
-  .log-entry__head{display:flex; align-items:center; gap:.8rem; font-family:var(--font-mono); font-size:.85rem; margin-bottom:1rem;}
-  .log-entry__head .dot{width:9px; height:9px; border-radius:50%; background:var(--glow); box-shadow:0 0 10px var(--glow);}
-  .log-entry__title{font-family:var(--font-body); font-weight:700; font-size:1.1rem; margin:0 0 1rem;}
-  .diff{font-family:var(--font-mono); font-size:.9rem; color:var(--glow); margin:.35rem 0;}
-  .log-entry--pending{opacity:.7; border-style:dashed;}
-  .log-entry--pending .dot{background:var(--murk); box-shadow:none;}
-  .log-entry--pending .diff{color:var(--murk);}
-
-  /* ---------- HERO SVG COLORS (classes instead of attr var() for max browser support) ---------- */
-  .fish-eye{fill:var(--void);}
-  .fish-a, .fish-b{fill:var(--glow);}
-  .fish-c{fill:#8cf7d8;}
-  .fish-d{fill:var(--amber);}
-  .fish-e{fill:var(--danger);}
-  .chain-line{stroke:var(--glow);}
-  .chain-label{fill:var(--murk);}
-  .chain-label--danger{fill:var(--danger);}
-
   /* ---------- CTA BAND ---------- */
   .cta-band{
     text-align:center; border-radius:var(--radius); border:1px solid var(--line);
@@ -235,9 +236,21 @@
   .footer__links a{text-decoration:none; color:var(--foam);}
   .footer__links a:hover{color:var(--glow);}
 
+  /* ---------- HERO SVG COLORS (classes instead of attr var() for max browser support) ---------- */
+  .fish-eye{fill:var(--void);}
+  .fish-a, .fish-b{fill:var(--glow);}
+  .fish-c{fill:#8cf7d8;}
+  .fish-d{fill:var(--amber);}
+  .fish-e{fill:var(--danger);}
+  .chain-line{stroke:var(--glow);}
+  .chain-label{fill:var(--murk);}
+  .chain-label--danger{fill:var(--danger);}
+
   @media (max-width:900px){
     .hero__grid{grid-template-columns:1fr;}
     .hero__visual{order:-1; max-width:340px; margin-inline:auto;}
+    .update__grid{grid-template-columns:1fr;}
+    .update-media{order:-1;}
     .features__grid{grid-template-columns:1fr;}
     .gallery__grid{grid-template-columns:repeat(2,1fr);}
   }
@@ -266,11 +279,14 @@
 
 <header class="nav" id="siteNav">
   <div class="wrap nav__inner">
-    <a href="#top" class="logo">Feed and Grow<span>Evolved</span></a>
+    <a href="#top" class="logo">
+      <img src="Pics/logo.png" alt="FeedAndGrowEvolved logo">
+      Feed and Grow<span>Evolved</span>
+    </a>
     <ul class="nav__links">
-      <li><a href="#merkmale">Merkmale</a></li>
+      <li><a href="#update">Update</a></li>
+      <li><a href="#features">Features</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#changelog">Changelog</a></li>
     </ul>
     <div class="nav__right">
       <a class="btn btn--primary btn--sm" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download</a>
@@ -282,17 +298,17 @@
   <section class="hero" id="top">
     <div class="wrap hero__grid">
       <div>
-        <span class="eyebrow">Inoffizieller Mod · Feed and Grow: Fish</span>
-        <h1 class="hero__title">Der ganze Ozean<br>ist jetzt <em>spielbar.</em></h1>
-        <p class="hero__sub">FeedAndGrowEvolved ist ein kostenloser Community-Mod für Feed and Grow: Fish. Version 0.1 schaltet jede einzige Kreatur im Spiel frei – vom kleinen Standardfisch bis zur mächtigsten Boss-Kreatur.</p>
+        <span class="eyebrow">Unofficial mod · Feed and Grow: Fish</span>
+        <h1 class="hero__title">The whole ocean<br>is now <em>playable.</em></h1>
+        <p class="hero__sub">FeedAndGrowEvolved is a free community mod for Feed and Grow: Fish. Version 0.1 unlocks every single creature in the game — from the smallest starter fish to the most powerful boss.</p>
         <div class="hero__meta">
-          <span class="badge">v0.1 · Aktuelle Version</span>
+          <a class="badge" href="#update">v0.1 · Current version</a>
         </div>
         <div class="hero__ctas">
           <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">
-            Mod herunterladen
+            Download the mod
           </a>
-          <a class="btn btn--ghost" href="#screenshots">Screenshots ansehen</a>
+          <a class="btn btn--ghost" href="#screenshots">See screenshots</a>
         </div>
       </div>
 
@@ -335,17 +351,43 @@
           </g>
 
           <text class="chain-label" x="14" y="580" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">START</text>
-          <text class="chain-label--danger" x="300" y="14" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">APEX-RÄUBER</text>
+          <text class="chain-label--danger" x="270" y="14" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">APEX PREDATOR</text>
         </svg>
       </div>
     </div>
   </section>
 
-  <section id="merkmale">
+  <section id="update">
+    <div class="wrap">
+      <div class="update-panel reveal">
+        <div class="update__grid">
+          <div class="update-media">
+            <img src="Pics/Screenshot%202026-07-18%20190558.png" alt="FeedAndGrowEvolved update 0.1 gameplay">
+            <span class="update-media__tag">v0.1</span>
+          </div>
+          <div class="update-copy">
+            <span class="eyebrow">Latest release</span>
+            <h2>Update 0.1</h2>
+            <p>The first release of FeedAndGrowEvolved is live and ready to download.</p>
+            <div class="whats-new">
+              <h3>What's new</h3>
+              <ul>
+                <li>Every creature in the game is now playable from the start</li>
+              </ul>
+              <p class="whats-new__note">+ more updates are in development — check back for future versions</p>
+            </div>
+            <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download v0.1</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Was v0.1 verändert</span>
-        <h2 class="statement">Jede Kreatur.<br><em>Spielbar. Sofort.</em></h2>
+        <span class="eyebrow">What the mod changes</span>
+        <h2 class="statement">Every creature.<br><em>Playable. Instantly.</em></h2>
       </div>
 
       <div class="features__grid">
@@ -353,22 +395,22 @@
           <div class="icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0"/></svg>
           </div>
-          <h3>Kein Freischalten nötig</h3>
-          <p>Alle Kreaturen stehen von Anfang an zur Verfügung – ohne Grinding und ohne Umwege über den normalen Fortschritt.</p>
+          <h3>No unlocking required</h3>
+          <p>Every creature is available from the very first second — no grinding, no detours through normal progression.</p>
         </div>
         <div class="feature-card reveal">
           <div class="icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4M9 4h7v7M15 20H8v-7"/></svg>
           </div>
-          <h3>Vom kleinsten Fisch bis zum Boss</h3>
-          <p>Ob unscheinbare Beute oder gewaltige Boss-Kreatur: Du entscheidest von der ersten Sekunde an, wer du sein willst.</p>
+          <h3>From tiny fish to boss</h3>
+          <p>Whether it's inconspicuous prey or a massive boss creature: you decide who you want to be, right from the start.</p>
         </div>
         <div class="feature-card reveal">
           <div class="icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
           </div>
-          <h3>Direkt startklar</h3>
-          <p>Installieren, Spiel öffnen, eintauchen. Version 0.1 ist ein schlanker, fokussierter erster Release.</p>
+          <h3>Ready to play instantly</h3>
+          <p>Install, launch the game, dive in. Version 0.1 is a lean, focused first release.</p>
         </div>
       </div>
     </div>
@@ -377,49 +419,21 @@
   <section id="screenshots">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Ingame-Footage</span>
-        <h2>Screenshots aus FeedAndGrowEvolved</h2>
+        <span class="eyebrow">In-game footage</span>
+        <h2>Screenshots from FeedAndGrowEvolved</h2>
       </div>
 
       <div class="gallery__grid reveal" id="galleryGrid"></div>
     </div>
   </section>
 
-  <section id="changelog">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Versionsverlauf</span>
-        <h2>Changelog</h2>
-      </div>
-
-      <div class="log reveal">
-        <div class="log-entry">
-          <div class="log-entry__head">
-            <span class="dot"></span>
-            <span>#v0.1 · Erste Veröffentlichung</span>
-          </div>
-          <p class="log-entry__title">Alle Kreaturen freigeschaltet</p>
-          <p class="diff">+ Jede Kreatur im Spiel ist von Anfang an spielbar</p>
-        </div>
-        <div class="log-entry log-entry--pending">
-          <div class="log-entry__head">
-            <span class="dot"></span>
-            <span>In Planung</span>
-          </div>
-          <p class="log-entry__title">Weitere Updates folgen</p>
-          <p class="diff">… wird mit zukünftigen Versionen ergänzt</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="download">
     <div class="wrap">
       <div class="cta-band reveal">
-        <h2>Bereit einzutauchen?</h2>
-        <p>Lade FeedAndGrowEvolved v0.1 kostenlos von GitHub herunter und spiele jede Kreatur, die das Spiel zu bieten hat.</p>
-        <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Mod herunterladen</a>
-        <div class="cta-band__note">Kostenlos · Open Source · Für Feed and Grow: Fish</div>
+        <h2>Ready to dive in?</h2>
+        <p>Download FeedAndGrowEvolved v0.1 for free from GitHub and play every creature the game has to offer.</p>
+        <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download the mod</a>
+        <div class="cta-band__note">Free · Open source · For Feed and Grow: Fish</div>
       </div>
     </div>
   </section>
@@ -427,24 +441,24 @@
 
 <footer>
   <div class="wrap footer__grid">
-    <p class="footer__disclaimer">FeedAndGrowEvolved ist ein inoffizielles Fan-Projekt für Feed and Grow: Fish. Es steht in keiner Verbindung zu und wird nicht unterstützt von den Original-Entwicklern des Spiels.</p>
+    <p class="footer__disclaimer">FeedAndGrowEvolved is an unofficial fan project for Feed and Grow: Fish. It is not affiliated with or endorsed by the game's original developers.</p>
     <ul class="footer__links">
-      <li><a href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Mod auf GitHub</a></li>
-      <li><a href="#top">Nach oben</a></li>
+      <li><a href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Mod on GitHub</a></li>
+      <li><a href="#top">Back to top</a></li>
     </ul>
   </div>
 </footer>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox__close" id="lightboxClose" aria-label="Schließen">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4 20 20M20 4 4 20"/></svg>
   </button>
   <div class="lightbox__arrows">
-    <button class="lightbox__arrow" id="lightboxPrev" aria-label="Vorheriges Bild">
+    <button class="lightbox__arrow" id="lightboxPrev" aria-label="Previous image">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
-    <button class="lightbox__arrow" id="lightboxNext" aria-label="Nächstes Bild">
+    <button class="lightbox__arrow" id="lightboxNext" aria-label="Next image">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
   </div>
@@ -462,16 +476,16 @@
 <script>
   document.documentElement.classList.add('js');
 
-  // --- Bilder ---
-  // Hinweis: Diese Dateien müssen im Ordner "Pics" im selben Repo liegen
-  // (gleicher Pfad wie diese HTML-Datei), mit genau diesen Dateinamen.
+  // Images referenced below must live in a "Pics" folder next to this HTML
+  // file, using exactly these filenames. The first screenshot is featured
+  // in the "Update 0.1" panel above and is left out of the grid below to
+  // avoid showing it twice.
   const screenshots = [
-    { file: "Screenshot 2026-07-18 190558.png", caption: "Ingame-Footage 1 / 6" },
-    { file: "Screenshot 2026-07-18 190619.png", caption: "Ingame-Footage 2 / 6" },
-    { file: "Screenshot 2026-07-18 190719.png", caption: "Ingame-Footage 3 / 6" },
-    { file: "Screenshot 2026-07-18 190812.png", caption: "Ingame-Footage 4 / 6" },
-    { file: "Screenshot 2026-07-18 190838.png", caption: "Ingame-Footage 5 / 6" },
-    { file: "Screenshot 2026-07-18 190849.png", caption: "Ingame-Footage 6 / 6" }
+    { file: "Screenshot 2026-07-18 190619.png", caption: "In-game footage 1 / 5" },
+    { file: "Screenshot 2026-07-18 190719.png", caption: "In-game footage 2 / 5" },
+    { file: "Screenshot 2026-07-18 190812.png", caption: "In-game footage 3 / 5" },
+    { file: "Screenshot 2026-07-18 190838.png", caption: "In-game footage 4 / 5" },
+    { file: "Screenshot 2026-07-18 190849.png", caption: "In-game footage 5 / 5" }
   ];
 
   const grid = document.getElementById('galleryGrid');
@@ -481,7 +495,7 @@
     item.className = 'gallery__item';
     item.setAttribute('data-index', i);
     item.innerHTML = `
-      <img src="${src}" alt="FeedAndGrowEvolved Ingame-Screenshot ${i + 1}" loading="lazy">
+      <img src="${src}" alt="FeedAndGrowEvolved in-game screenshot ${i + 1}" loading="lazy">
       <div class="gallery__caption">${shot.caption}</div>
     `;
     item.addEventListener('click', () => openLightbox(i));
@@ -506,7 +520,7 @@
   function updateLightbox(){
     const shot = screenshots[currentIndex];
     lightboxImg.src = "Pics/" + encodeURIComponent(shot.file);
-    lightboxImg.alt = "FeedAndGrowEvolved Ingame-Screenshot " + (currentIndex + 1);
+    lightboxImg.alt = "FeedAndGrowEvolved in-game screenshot " + (currentIndex + 1);
     lightboxCaption.textContent = shot.caption;
     lightboxCounter.textContent = (currentIndex + 1) + " / " + screenshots.length;
   }
@@ -524,7 +538,7 @@
     if (e.key === 'ArrowLeft') showPrev();
   });
 
-  // --- Nav-Hintergrund beim Scrollen ---
+  // --- Nav background on scroll ---
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('is-scrolled', window.scrollY > 10);
