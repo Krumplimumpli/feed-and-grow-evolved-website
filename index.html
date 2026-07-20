@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FeedAndGrowEvolved – Mod for Feed and Grow: Fish</title>
-  <meta name="description" content="FeedAndGrowEvolved is a free mod for Feed and Grow: Fish. Version 0.1 makes every creature in the game playable, supports online start, and includes an automatic update checker.">
+  <meta name="description" content="FeedAndGrowEvolved is a free mod for Feed and Grow: Fish. Version 0.0.1 makes every creature in the game playable, fixes the WiFi bug, and includes a complete UI overhaul.">
   <meta name="theme-color" content="#050b12">
   <link rel="icon" type="image/png" href="Pics/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -321,11 +321,11 @@
       <div>
         <span class="eyebrow">Unofficial mod · Feed and Grow: Fish</span>
         <h1 class="hero__title">
-          <em>New Fishes</em> · <em>WiFi Fix</em> · <em>Update</em>
+          <em>New UI</em> · <em>WiFi Fix</em> · <em>All Creatures</em>
         </h1>
-        <p class="hero__sub">FeedAndGrowEvolved is a free community mod for Feed and Grow: Fish. Version 0.1 unlocks every single creature in the game — from the smallest starter fish to the most powerful boss.</p>
+        <p class="hero__sub">FeedAndGrowEvolved is a free community mod for Feed and Grow: Fish. Version 0.0.1 unlocks every single creature in the game, fixes the WiFi bug, and features a completely redesigned user interface.</p>
         <div class="hero__meta">
-          <a class="badge" href="#update">v0.1 · Current version</a>
+          <a class="badge" href="#update">v0.0.1 · Latest Update</a>
         </div>
         <div class="hero__ctas">
           <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">
@@ -349,23 +349,26 @@
       <div class="update-panel reveal">
         <div class="update__grid">
           <div class="update-media">
-            <img src="Pics/Screenshot%202026-07-18%20190558.png" alt="FeedAndGrowEvolved update 0.1 gameplay">
-            <span class="update-media__tag">v0.1</span>
+            <img src="Pics/main.png" alt="FeedAndGrowEvolved update 0.0.1 gameplay">
+            <span class="update-media__tag">v0.0.1</span>
           </div>
           <div class="update-copy">
-            <span class="eyebrow">Latest release</span>
-            <h2>Update 0.1</h2>
-            <p>The first release of FeedAndGrowEvolved is live and ready to download.</p>
+            <span class="eyebrow">NEW UPDATE</span>
+            <h2>Update 0.0.1</h2>
+            <p>FeedAndGrowEvolved v0.0.1 is here! This major release rebuilds the entire UI system, fixes the WiFi bug, and introduces the Frog's charged jump mechanic.</p>
             <div class="whats-new">
               <h3>What's new</h3>
               <ul>
+                <li>Complete UI overhaul — new fish selection menu with categories</li>
                 <li>Every creature in the game is now playable from the start</li>
-                <li>The game can now be started online</li>
-                <li>Automatic update checker — stay up to date without manual checks</li>
+                <li>WiFi connection bug finally fixed</li>
+                <li>Frog charged jump — hold Shift to jump further</li>
+                <li>Random Fish button for instant action</li>
+                <li>Automatic update checker — stay up to date</li>
               </ul>
               <p class="whats-new__note">+ more updates are in development — check back for future versions</p>
             </div>
-            <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download v0.1</a>
+            <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download v0.0.1</a>
           </div>
         </div>
       </div>
@@ -399,7 +402,7 @@
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
           </div>
           <h3>Ready to play instantly</h3>
-          <p>Install, launch the game, dive in. Version 0.1 is a lean, focused first release.</p>
+          <p>Install, launch the game, dive in. Version 0.0.1 is a lean, focused release with a completely new UI.</p>
         </div>
       </div>
     </div>
@@ -420,7 +423,7 @@
     <div class="wrap">
       <div class="cta-band reveal">
         <h2>Ready to dive in?</h2>
-        <p>Download FeedAndGrowEvolved v0.1 for free from GitHub and play every creature the game has to offer.</p>
+        <p>Download FeedAndGrowEvolved v0.0.1 for free from GitHub and play every creature the game has to offer with a brand new UI.</p>
         <a class="btn btn--primary" href="https://github.com/Krumplimumpli/FeedAndGrowEvolvedMod" target="_blank" rel="noopener">Download the mod</a>
         <div class="cta-band__note">Free · Open source · For Feed and Grow: Fish</div>
       </div>
@@ -465,16 +468,11 @@
 <script>
   document.documentElement.classList.add('js');
 
-  // Images referenced below must live in a "Pics" folder next to this HTML
-  // file, using exactly these filenames. The first screenshot is featured
-  // in the "Update 0.1" panel above and is left out of the grid below to
-  // avoid showing it twice.
+  // Images: menu.png is the hero image, gallery has 3 images
   const screenshots = [
-    { file: "Screenshot 2026-07-18 190619.png", caption: "In-game footage 1 / 5" },
-    { file: "Screenshot 2026-07-18 190719.png", caption: "In-game footage 2 / 5" },
-    { file: "Screenshot 2026-07-18 190812.png", caption: "In-game footage 3 / 5" },
-    { file: "Screenshot 2026-07-18 190838.png", caption: "In-game footage 4 / 5" },
-    { file: "Screenshot 2026-07-18 190849.png", caption: "In-game footage 5 / 5" }
+    { file: "main.png", caption: "Main Menu" },
+    { file: "mosa.png", caption: "Mosasaurus" },
+    { file: "naut.png", caption: "Nautilus" }
   ];
 
   const grid = document.getElementById('galleryGrid');
@@ -484,7 +482,7 @@
     item.className = 'gallery__item';
     item.setAttribute('data-index', i);
     item.innerHTML = `
-      <img src="${src}" alt="FeedAndGrowEvolved in-game screenshot ${i + 1}" loading="lazy">
+      <img src="${src}" alt="FeedAndGrowEvolved screenshot ${i + 1}" loading="lazy">
       <div class="gallery__caption">${shot.caption}</div>
     `;
     item.addEventListener('click', () => openLightbox(i));
@@ -509,7 +507,7 @@
   function updateLightbox(){
     const shot = screenshots[currentIndex];
     lightboxImg.src = "Pics/" + encodeURIComponent(shot.file);
-    lightboxImg.alt = "FeedAndGrowEvolved in-game screenshot " + (currentIndex + 1);
+    lightboxImg.alt = "FeedAndGrowEvolved screenshot " + (currentIndex + 1);
     lightboxCaption.textContent = shot.caption;
     lightboxCounter.textContent = (currentIndex + 1) + " / " + screenshots.length;
   }
